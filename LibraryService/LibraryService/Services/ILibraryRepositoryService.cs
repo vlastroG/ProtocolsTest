@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace LibraryService.Services
 {
-    public interface ILabraryDatabaseContextService
+    public interface ILibraryRepositoryService
     {
-        IList<Book> Books { get; }
+        IList<Book> GetByTitle(string title);
+
+
+        IList<Book> GetByAuthor(string author);
+
+
+        IList<Book> GetByCategory(string category);
     }
 }

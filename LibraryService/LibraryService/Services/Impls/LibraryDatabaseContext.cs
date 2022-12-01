@@ -8,11 +8,11 @@ using System.Web;
 
 namespace LibraryService.Services.Impls
 {
-    public class LibraryDatabaseContext : ILabraryDatabaseContextService
+    public class LibraryDatabaseContext : ILibraryDatabaseContextService
     {
         private IList<Book> _libraryDatabase;
 
-        public IList<Book> Books => throw new NotImplementedException();
+        public IList<Book> Books => _libraryDatabase;
 
         public LibraryDatabaseContext()
         {
@@ -21,6 +21,9 @@ namespace LibraryService.Services.Impls
 
         private void Initialize()
         {
+            _libraryDatabase = (List<Book>)JsonConvert.DeserializeObject(
+                 Encoding.UTF8.GetString(Properties.Resources.books),
+                 typeof(List<Book>));
         }
     }
 }

@@ -19,29 +19,50 @@ namespace LibraryService.Services.Impls
 
         public IList<Book> GetByAuthor(string author)
         {
-            return _context.Books
-                .Where(
-                     b => !(b.Authors.FirstOrDefault(
-                         a => a.Name.IndexOf(author, StringComparison.OrdinalIgnoreCase) >= 0) is null))
-                .ToList();
+            try
+            {
+                return _context.Books
+                    .Where(
+                         b => !(b.Authors.FirstOrDefault(
+                             a => a.Name.IndexOf(author, StringComparison.OrdinalIgnoreCase) >= 0) is null))
+                    .ToList();
+            }
+            catch (Exception)
+            {
+                return new List<Book>();
+            }
         }
 
         public IList<Book> GetByCategory(string category)
         {
-            return _context.Books
-                .Where(
-                    book => book.Category
-                    .IndexOf(category, StringComparison.OrdinalIgnoreCase) >= 0)
-                .ToList();
+            try
+            {
+                return _context.Books
+                    .Where(
+                        book => book.Category
+                        .IndexOf(category, StringComparison.OrdinalIgnoreCase) >= 0)
+                    .ToList();
+            }
+            catch (Exception)
+            {
+                return new List<Book>();
+            }
         }
 
         public IList<Book> GetByTitle(string title)
         {
-            return _context.Books
-                .Where(
-                    book => book.Title
-                    .IndexOf(title, StringComparison.OrdinalIgnoreCase) >= 0)
-                .ToList();
+            try
+            {
+                return _context.Books
+                    .Where(
+                        book => book.Title
+                        .IndexOf(title, StringComparison.OrdinalIgnoreCase) >= 0)
+                    .ToList();
+            }
+            catch (Exception)
+            {
+                return new List<Book>();
+            }
         }
     }
 }

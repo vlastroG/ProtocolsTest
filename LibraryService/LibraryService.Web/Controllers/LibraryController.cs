@@ -21,7 +21,7 @@ namespace LibraryService.Web.Controllers
                 LibraryWebServiceSoapClient client = new LibraryWebServiceSoapClient(
                     LibraryWebServiceSoapClient.EndpointConfiguration.LibraryWebServiceSoap);
 
-                if (!string.IsNullOrWhiteSpace(searchString) && searchString.Length >= 3)
+                if (!string.IsNullOrWhiteSpace(searchString) && searchString.Length >= 1)
                 {
                     switch (searchType)
                     {

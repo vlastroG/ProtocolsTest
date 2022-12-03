@@ -14,7 +14,7 @@ namespace LibraryService.Web
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Library/Error");
             }
             app.UseStaticFiles();
 
@@ -24,7 +24,7 @@ namespace LibraryService.Web
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Library}/{action=Index}/{id?}");
 
             app.Run();
         }

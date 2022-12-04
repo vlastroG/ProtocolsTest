@@ -4,6 +4,7 @@
     <xsd:schema targetNamespace="http://Microsoft.ServiceModel.Samples/Imports">
       <xsd:import schemaLocation="http://localhost:52418/PumpService.svc?xsd=xsd0" namespace="http://Microsoft.ServiceModel.Samples" />
       <xsd:import schemaLocation="http://localhost:52418/PumpService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52418/PumpService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PumpService" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IPumpService_RunScript_InputMessage">

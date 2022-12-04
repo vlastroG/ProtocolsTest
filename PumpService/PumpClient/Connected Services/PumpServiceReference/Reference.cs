@@ -9,7 +9,86 @@
 //------------------------------------------------------------------------------
 
 namespace PumpClient.PumpServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="StatisticsService", Namespace="http://schemas.datacontract.org/2004/07/PumpService")]
+    [System.SerializableAttribute()]
+    public partial class StatisticsService : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AllCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ErrorCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SuccessCountField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AllCount {
+            get {
+                return this.AllCountField;
+            }
+            set {
+                if ((this.AllCountField.Equals(value) != true)) {
+                    this.AllCountField = value;
+                    this.RaisePropertyChanged("AllCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ErrorCount {
+            get {
+                return this.ErrorCountField;
+            }
+            set {
+                if ((this.ErrorCountField.Equals(value) != true)) {
+                    this.ErrorCountField = value;
+                    this.RaisePropertyChanged("ErrorCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SuccessCount {
+            get {
+                return this.SuccessCountField;
+            }
+            set {
+                if ((this.SuccessCountField.Equals(value) != true)) {
+                    this.SuccessCountField = value;
+                    this.RaisePropertyChanged("SuccessCount");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Microsoft.ServiceModel.Samples", ConfigurationName="PumpServiceReference.IPumpService", CallbackContract=typeof(PumpClient.PumpServiceReference.IPumpServiceCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
@@ -34,7 +113,7 @@ namespace PumpClient.PumpServiceReference {
     public interface IPumpServiceCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Microsoft.ServiceModel.Samples/IPumpService/UpdateStatistics", ReplyAction="http://Microsoft.ServiceModel.Samples/IPumpService/UpdateStatisticsResponse")]
-        void UpdateStatistics(object statistics);
+        void UpdateStatistics(PumpClient.PumpServiceReference.StatisticsService statistics);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

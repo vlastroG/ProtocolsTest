@@ -23,9 +23,10 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="PumpService.wsdl" MetadataType="Wsdl" ID="be6e5871-a8d7-4ac5-acce-421ad27eaf2e" SourceId="1" SourceUrl="http://localhost:52418/PumpService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="PumpService.xsd" MetadataType="Schema" ID="08db73b9-0f9b-4b9f-856e-c82b1c51395b" SourceId="1" SourceUrl="http://localhost:52418/PumpService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PumpService1.xsd" MetadataType="Schema" ID="fd077393-74a9-4bd6-8432-bc9de543b915" SourceId="1" SourceUrl="http://localhost:52418/PumpService.svc?xsd=xsd1" />
     <MetadataFile FileName="PumpService1.wsdl" MetadataType="Wsdl" ID="23ec7b88-206b-4115-be42-a3cbaf9bbaec" SourceId="1" SourceUrl="http://localhost:52418/PumpService.svc?wsdl" />
+    <MetadataFile FileName="PumpService2.xsd" MetadataType="Schema" ID="dd0a28a4-18e4-49c5-892a-af23336989e1" SourceId="1" SourceUrl="http://localhost:52418/PumpService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PumpService1.xsd" MetadataType="Schema" ID="fd077393-74a9-4bd6-8432-bc9de543b915" SourceId="1" SourceUrl="http://localhost:52418/PumpService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PumpService.xsd" MetadataType="Schema" ID="08db73b9-0f9b-4b9f-856e-c82b1c51395b" SourceId="1" SourceUrl="http://localhost:52418/PumpService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

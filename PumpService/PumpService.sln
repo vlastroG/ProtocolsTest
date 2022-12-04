@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PumpService", "PumpService\PumpService.csproj", "{C3285B4D-7589-4FDE-81E3-15D81A4C67D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PumpClient", "PumpClient\PumpClient.csproj", "{7A49E7B7-0258-430D-82FC-2C78932BA64D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3285B4D-7589-4FDE-81E3-15D81A4C67D1} = {C3285B4D-7589-4FDE-81E3-15D81A4C67D1}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
@@ -113,6 +114,7 @@ namespace PumpService
                     }
                     _statisticsService.AllCount++;
                     _pumpServiceCallback.UpdateStatistics((StatisticsService)_statisticsService);
+                    Thread.Sleep(1000);
                 }
             });
 

@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PumpService.svc" />
-    <Content Include="Scripts\Sample.txt" />
+    <None Include="Scripts\Sample.script" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,7 @@
 using ClinicService.Data.DbContexts;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace ClinicService
 {
@@ -10,6 +12,16 @@ namespace ClinicService
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.Listen(IPAddress.Any, 5001, listenOptions =>
+                {
+                    listenOptions.Protocols = HttpProtocols.Http2;
+                });
+            });
+
+            builder.Services.AddGrpc();
 
             #region Configure EF DB Context Service (ClinicService Database)
 
@@ -38,6 +50,12 @@ namespace ClinicService
 
 
             app.MapControllers();
+
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGrpcService<ClinicService.Services.Impl.ClinicService>();
+            });
 
             app.Run();
         }

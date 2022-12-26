@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+option csharp_namespace = "ClinicServiceDotNet7.Protos";
+
+import "google/protobuf/wrappers.proto";
+import "google/api/annotations.proto";
+
+package proto;
+
+// Сервис по работе с клиентами
+service ClinicService{
+	// Добавление клиента
+	rpc CreateClient (CreateClientRequest) returns (CreateClientResponse);
+	// Обновление клиента
+	rpc UpdateClient (UpdateClientRequest) returns (UpdateClientResponse);
+	// Удаление клиента
+	rpc DeleteClient (DeleteClientRequest) returns (DeleteClientResponse);
+	// Получение клиента по Id
+	rpc GetClientById (GetClientByIdRequest) returns (ClientResponse);
+	// Получить всех клиентов
+	rpc GetClients (GetClientsRequest) returns (GetClientsResponse){
+		option (google.api.http) = {
+			get: "/api/clients"
+		};
+	};
+}
+
+// Запрос для создания клиента
+message CreateClientRequest {
+	string document = 1;
+	string surname = 2;
+	string firstName = 3;
+	string patronymic = 4;
+}
+
+// Ответ на запрос создания клиента
+message CreateClientResponse {
+	google.protobuf.Int32Value clientId = 1;
+	int32 errCode = 2;
+	string errMesage = 3;
+}
+
+// Запрос на обновление клиента
+message UpdateClientRequest {
+	int32 clientId = 1;
+	string document = 2;
+	string surname = 3;
+	string firstName = 4;
+	string patronymic = 5;
+}
+
+// Ответ на запрос обновления клиента
+message UpdateClientResponse {
+	int32 errCode = 1;
+	string errMessage = 2;
+}
+
+// Запрос на удаление клиента
+message DeleteClientRequest {
+	int32 clientId = 1;
+}
+
+// Ответ на запрос удаления клиента
+message DeleteClientResponse {
+	int32 errCode = 1;
+	string errMessage = 2;
+}
+
+//Запрос на получение клиента по Id
+message GetClientByIdRequest {
+	int32 clientId = 1;
+}
+
+// Ответ на запрос получения клиента по Id
+message GetClientByIdResponse {
+	ClientResponse client = 1;
+	int32 errCode = 2;
+	string errMessage = 3;
+}
+
+// Ответ на запрос получения клиента по Id
+message ClientResponse {
+	int32 clientId = 1;
+	string document = 2;
+	string surname = 3;
+	string firstName = 4;
+	string patronymic = 5;
+}
+
+// Запрос на получение всех клиентов
+message GetClientsRequest {
+}
+
+// Ответ на запрос получения всех клиентов
+message GetClientsResponse {
+	repeated ClientResponse clients = 1;
+	int32 errCode = 2;
+	string errMessage = 3;
+}

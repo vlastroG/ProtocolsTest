@@ -1,3 +1,6 @@
+using RootServiceNamespace;
+using SampleService.Services.Clients;
+
 namespace SampleService
 {
     public class Program
@@ -6,6 +9,12 @@ namespace SampleService
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddHttpClient<IRootServiceClient, Services.Clients.Impl.RootServiceClient>(
+                "RootServiceClient",
+                client =>
+            {
+
+            });
             // Add services to the container.
 
             builder.Services.AddControllers();

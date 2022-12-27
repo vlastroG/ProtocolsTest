@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicClient", "ClinicClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicServiceDotNet7", "ClinicServiceDotNet7\ClinicServiceDotNet7.csproj", "{DCD382B1-EE4B-403A-B212-0615EC846C60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RootService", "..\RootService\RootService.csproj", "{3DADA1F4-A64A-40BE-B830-8FDB972E3974}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DCD382B1-EE4B-403A-B212-0615EC846C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCD382B1-EE4B-403A-B212-0615EC846C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCD382B1-EE4B-403A-B212-0615EC846C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DADA1F4-A64A-40BE-B830-8FDB972E3974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DADA1F4-A64A-40BE-B830-8FDB972E3974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DADA1F4-A64A-40BE-B830-8FDB972E3974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DADA1F4-A64A-40BE-B830-8FDB972E3974}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
